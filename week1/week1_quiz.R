@@ -83,4 +83,4 @@ system.time(tapply(DT$pwgtp15,DT$SEX,mean))
 
 system.time(rowMeans(DT)[DT$SEX==1])+system.time(rowMeans(DT)[DT$SEX==2])
 
----cannot figure out the answer
+#---cannot figure out the answer
