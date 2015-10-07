@@ -60,10 +60,27 @@ download.file(fileUrl, destfile="./survey2.csv", method="curl")
 install.packages("data.table")
 library(data.table)
 DT <- fread("./survey2.csv")
-system.time(DT[,mean(pwgtp15),by=SEX])
+DT$SEX
+by.self(DT[,mean(pwgtp15),by=SEX])
+# user  system elapsed 
+#0.002   0.000   0.002
+
 system.time(mean(DT[DT$SEX==1,]$pwgtp15))+system.time(mean(DT[DT$SEX==2,]$pwgtp15))
+#  user  system elapsed 
+# 0.045   0.002   0.047 
+
 system.time(sapply(split(DT$pwgtp15,DT$SEX),mean))
+# user  system elapsed 
+#0.002   0.000   0.002 
+
 system.time(mean(DT$pwgtp15,by=DT$SEX))
+# user  system elapsed 
+#0.000   0.000   0.001
+
 system.time(tapply(DT$pwgtp15,DT$SEX,mean))
-system.time(rowMeans(DT)[DT$SEX==1])+system.time(rowMeans(DT)[DT$SEX==2]
-)
+# user  system elapsed 
+#0.002   0.000   0.002
+
+system.time(rowMeans(DT)[DT$SEX==1])+system.time(rowMeans(DT)[DT$SEX==2])
+
+---cannot figure out the answer
