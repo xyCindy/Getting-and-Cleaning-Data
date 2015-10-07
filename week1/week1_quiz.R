@@ -33,7 +33,7 @@ colIndex <- 7:15
 dat <- read.xlsx("./gas.xlsx", sheetIndex=1,colIndex=colIndex, 
                  rowIndex=rowIndex,header=TRUE)
 sum(dat$Zip*dat$Ext,na.rm=T) 
-#---6534720
+#---36534720
 
 #Question 4
 #Download the XML data on Baltimore restaurants
