@@ -1,6 +1,5 @@
 #week 1 quiz
 #Question 1
-setwd("~/Documents/GC_Data/week1")
 getwd()
 # download American Community Survey 
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
