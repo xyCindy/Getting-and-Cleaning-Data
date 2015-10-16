@@ -38,7 +38,6 @@ head(education,2)
 
 # Merge two datasets by CountryCode, all=FALSE only returns matched rows
 mergedData <- merge(product,education,by.x="V1",by.y="CountryCode",all=FALSE)
-# Because V1 has been merged, we need to look at V2 to see how many unique value are
 sum(!is.na(unique(mergedData$V1)))
 #[1] 189
 
